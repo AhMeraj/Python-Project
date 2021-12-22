@@ -34,7 +34,7 @@ for i in range(0,n):
     Data.append(0)
     Data[i]=Database_createion()
     Data[i].Information()
-    print("Your Account is created.Press Enter to continue:")
+    print("The Account is created.Press Enter to continue:")
     str(input())
 while(True):
     choice=int(input("Do you want more operation:\n1.Yes\t2.No\n-"))

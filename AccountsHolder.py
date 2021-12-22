@@ -59,6 +59,6 @@ for i in range(0,n):
     File.write(f"Age:{Data[i].age}\n")
     File.write(f"Address:{Data[i].address}\n")
     File.write(f"Phone number:{Data[i].phn}\n")
-    File.write(f"Balance:{Data[i].balance}")
+    File.write(f"Balance:{Data[i].balance}\n\n\n")
 print("Processing is finished.\n")
 File.close()

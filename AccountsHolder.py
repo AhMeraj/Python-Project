@@ -18,6 +18,10 @@ class Database_createion():
     def addMoney(self):
         a_balance = float(input("Amount:"))
         self.balance=self.balance+a_balance
+    def Transfer_add(self,amount):
+        self.balance=self.balance+amount
+    def Transfer_draw(self,amount):
+        self.balance=self.balance-amount
     def Display(self):
         print("Id=",self.id)
         print("Name=",self.name)
@@ -40,7 +44,7 @@ while(True):
     choice=int(input("Do you want more operation:\n1.Yes\t2.No\n-"))
     if(choice==1):
         id_n=int(input("Enter your id:"))
-        choice=int(input("Which operation you want to perform:\n1.Add Money\t2.Withdraw\t3.Display\n-"))
+        choice=int(input("Which operation you want to perform:\n1.Add Money\t2.Withdraw\t3.Display\t4.Transfer\n-"))
         id_n=id_n-1251
         if(choice==1):
             Data[id_n].addMoney()
@@ -48,6 +52,15 @@ while(True):
             Data[id_n].Withdraw();
         elif(choice==3):
             Data[id_n].Display()
+        elif(choice==4):
+            money=float(input("Enter amount:"))
+            if(money>Data[id_n].balance):
+                print("Sorry!You do not have sufficiant balance.")
+                money = float(input(f"Input again\nYour current balance is:{Data[id_n].balance}\n-"))
+            id_d=int(input("Where you want to send:"))
+            id_d=id_d-1251
+            Data[id_d].Transfer_add(money)
+            Data[id_n].Transfer_draw(money)
         else:
             print("Invalid Choice.")
     else:
